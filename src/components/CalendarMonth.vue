@@ -10,15 +10,7 @@ export default {
   data() {
     return {
       month: 0,
-      weekly: [
-        "Lun",
-        "Mar",
-        "Mie",
-        "Jue",
-        "Vie",
-        "Sab",
-        "Dom"
-      ]
+      weekly: ["Lun","Mar","Mie","Jue","Vie","Sab","Dom"]
     };
   },
   computed: {
@@ -66,10 +58,10 @@ export default {
 
       if (days[0]) days[0].style = `grid-column-start: ${startCell}`
 
-      this.decoratedCells(startCell)
+      this.setWeekendDays(startCell)
     },
 
-    decoratedCells(actualPosition) {
+    setWeekendDays(actualPosition) {
       const days = document.querySelectorAll(".day")
       actualPosition = actualPosition === 0 ? 1 : actualPosition
 
